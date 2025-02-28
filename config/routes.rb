@@ -11,7 +11,5 @@ Rails.application.routes.draw do
       resources :entries, only: [:new, :create]
     end
   end
-  
-end
 
-end
+
