@@ -1,0 +1,14 @@
+<h1><%= @place.name %></h1>
+<h2>Journal Entries:</h2>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <strong><%= entry.title %></strong> (on <%= entry.date %>)<br>
+      <%= entry.description %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a New Entry", new_place_entry_path(@place) %><br>
+<%= link_to "Back to Places", places_path %>
