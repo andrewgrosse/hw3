@@ -1,14 +1,11 @@
-<h1>Add a New Place</h1>
+<h1>My Travel Log</h1>
 
-<%= form_with model: @place, local: true do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.submit "Save Place" %>
-  </p>
-<% end %>
+<ul>
+  <% @places.each do |place| %>
+    <li>
+      <%= link_to place.name, place_path(place) %>
+    </li>
+  <% end %>
+</ul>
 
-<%= link_to "Back to Places", places_path %>
-
+<%= link_to "Add a New Place", new_place_path %>
